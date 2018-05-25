@@ -3,3 +3,93 @@ $main-color: skyblue;
 body {
   background-color: $main-color;
 }
+.btn {
+  width: auto;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #555;
+  padding: 5px 10px;
+  color: #fff;
+  text-decoration: none;
+
+  &__new-post {
+    display: none;
+    .root--authed & {
+      display: inline-block;
+    }
+  }
+
+  &__log {
+    &--in {
+      .root--authed & {
+        display: none;
+      }
+    }
+    &--out {
+      display: none;
+      .root--authed & {
+        display: inline-block;
+      }
+    }
+    &--to {
+      &-this, &-other {
+        display: none;
+        .root--authed & {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+// loading indicator
+
+.root {
+  &--loading {
+    &::after {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      content: "Loading...";
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+    }
+  }
+}
+
+.login {
+  &--required {
+    .root--authed & {
+      display: none;
+    }
+  }
+  &--changed {
+    display: none;
+    .root--authed & {
+      display: block;
+    }
+  }
+}
+
+
+.done {
+  color: dodgerblue;
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+.todo-item {
+  li {
+    vertical-align: bottom;
+  }
+  .check {
+    color: dodgerblue;
+    font-size: 1.5rem;
+  }
+}

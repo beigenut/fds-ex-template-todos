@@ -5,10 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>중간 프로젝트 템플릿</title>
+  <link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./index.scss">
 </head>
 <body>
-  <h1>중간 프로젝트 템플릿</h1>
+  <div class="root">
+    <h1 class="root__title"> TODO LIST APP</h1>
+    <p class="login--required">Login First</p>    
+    <p class="login--changed">Would you use your logined account? Or switch to another?</p>    
+    <a href="#" class="btn btn__log--in">LOG IN</a>
+    <a href="#" class="btn btn__log--to-this">USE MINE</a>
+    <a href="#" class="btn btn__log--to-other">CHANGE ACCOUNT</a>
+  </div>
+
+  <!-- 로그인 페이지 -->
+  <template id="login">
+    <div class="login">
+      <h1 class="login__title">Log in</h1>
+      <form class="login__form">
+        <input name="username" type="text" class="login__username">
+        <input name="password" type="password" class="login__password">
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+  </template>
+
+  <!-- 메인 페이지 -->
+  <template id="todo-list">
+    <a href="#" class="btn btn__log--out">LOG OUT</a>
+    <h2>TODO List</h2>
+    <div class="todo-list__add">
+      <form class="todo-list__add-form">
+        <input name="body" type="text" class="todo-list__add-body" repuired>
+        <button type="submit">ADD THIS TODO</button>
+      </form>
+    </div>
+    <div class="todo-list"></div>
+  </template>
+
+  <!-- add new todo list -->
+  <template id="todo-list__add">
+
+  </template>
+
+  <!-- todo list 모음 -->
+  <template id="todo-item"> 
+    <ul>
+      <div class="todo-item">
+        <li> 
+          <label for="todo-item__checkbox"></label>
+          <a href="#" class="check todo-item__checkbox-done"><ion-icon name="square-outline"></ion-icon></a>
+          <a href="#" class="check todo-item__checkbox-yet hidden"><ion-icon name="checkbox-outline"></ion-icon></a>
+          <span class="todo-item__body"></span>  
+          <button class="btn__todo-remove"> Remove</button>
+        </li>
+    </div>
+    </ul>
+  </template>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
   <script src="./index.js"></script>
 </body>
 </html>
