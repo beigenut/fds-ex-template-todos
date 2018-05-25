@@ -28,6 +28,7 @@ const templates = {
 // Avoid code duplication
 function render(fragment) {
   rootEl.textContent = '' 
+  // debugger
   rootEl.appendChild(fragment)
 }
 
